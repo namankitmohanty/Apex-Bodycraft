@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ApexBodyCraft.in</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <nav>
+      <div id="logo">
+        <img src="Apex_logo.png" alt="" />
+      </div>
+      <div class="nav-items">
+        <a href="index.html" class="active">Home</a>
+        <a href="fitbook.html">Fitbook</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="subcontainer" data-aos="zoom-in" data-aos-duration="2000">
+        <h2 id="quote">
+          <q><cite>Your Body Will Achieve What Your Mind Can Believe</cite></q>
+        </h2>
+        <input type="text" id="userName" placeholder="Enter Your Name"/>
+        <button id="sc-btn" onclick="getName()">GET CRAFTY</button>
+      </div>
+
+      <div class="innercontainer">
+        <div class="leftcolumn">
+          <h2 class="lcheading">Select Category</h2>
+          <div class="category">
+            <div id="mb">Muscle Building</div>
+            <div id="sa">Sports & Athletics</div>
+            <div id="fl">Fat Loss</div>
+            <div id="wg">Weight Gain</div>
+          </div>
+        </div>
+        <div class="rightcolumn"> 
+          <div class="rchome">
+            <h2 id="nameChange">Hello User!</h2>
+            <p>Select your goal from the given list of category to get yourself sculpted with our precised suggestions made just for you.</p>
+          </div>
+
+          <div class="wrapper1">
+            <h3 id="mbheading">Muscle Building</h3>
+            <form id="mb_form">
+              <input type="text" name="mb_height" id="mb_height" placeholder="Enter Your Height (in cm)">
+              <input type="text" name="mb_weight" id="mb_weight" placeholder="Enter Your Weight (in kg)">
+              <input type="text" name="mb_age" id="mb_age" placeholder="Enter Your Age">
+              <select name="mb_gender" id="mb_gender">
+                <option value="">Select Gender</option>
+                <option value="Male" class="opt">MALE</option>
+                <option value="Female" class="opt">FEMALE</option>
+              </select>
+              <select name="mb_bodytype" id="mb_bodytype">
+                <option value="">Select Your Bodytype</option>
+                <option value="Ectomorph" id="ectomorph">ECTOMORPH</option>
+                <option value="Endomorph" id="endomorph">ENDOMORPH</option>
+                <option value="Mesomorph" id="mesomorph">MESOMORPH</option>
+              </select>
+              <select name="mb_duration" id="mb_duration">
+                <option value="">Select Duration</option>
+                <option value="3 MONTHS" class="opt">3 MONTHS</option>
+                <option value="6 MONTHS" class="opt">6 MONTHS</option>
+                <option value="1 YEAR" class="opt">1 YEAR</option>
+              </select>
+              <div id="mb_btn" onclick="generate()">Generate</div>
+            </form>
+          </div>
+
+          <div class="wrapper2">
+            <h3 id="saheading">Sports & Athletics</h3>
+            <form id="sa_form">
+              <input type="text" name="sa_height" id="sa_height" placeholder="Enter Your Height (in cm)">
+              <input type="text" name="sa_weight" id="sa_weight" placeholder="Enter Your Weight (in kg)">
+              <input type="text" name="sa_age" id="sa_age" placeholder="Enter Your Age">
+              <input type="text" name="sa_sport" id="sa_sport" placeholder="Enter Your Sport">
+              <select name="sa_bodytype" id="sa_bodytype">
+                <option value="">Select Your Bodytype</option>
+                <option value="Ectomorph" id="ectomorph">ECTOMORPH</option>
+                <option value="Endomorph" id="endomorph">ENDOMORPH</option>
+                <option value="Mesomorph" id="mesomorph">MESOMORPH</option>
+              </select>
+              <select name="sa_gender" id="sa_gender">
+                <option value="">Select Gender</option>
+                <option value="Male" class="opt">MALE</option>
+                <option value="Female" class="opt">FEMALE</option>
+              </select>
+              <div id="sa_btn" onclick="sa_generate()">Generate</div>
+            </form>
+          </div>
+
+          <div class="wrapper3">
+            <h3 id="flheading">Fat Loss</h3>
+            <form id="fl_form">
+              <input type="text" name="fl_height" id="fl_height" placeholder="Enter Your Height (in cm)">
+              <input type="text" name="fl_weight" id="fl_weight" placeholder="Enter Your Weight (in kg)">
+              <input type="text" name="fl_age" id="fl_age" placeholder="Enter Your Age">
+              <input type="text" name="fl_waist" id="fl_waist" placeholder="Enter Your Waist Size (in cm)">
+              <select name="fl_bodytype" id="fl_bodytype">
+                <option value="">Select Your Bodytype</option>
+                <option value="Ectomorph" id="ectomorph">ECTOMORPH</option>
+                <option value="Endomorph" id="endomorph">ENDOMORPH</option>
+                <option value="Mesomorph" id="mesomorph">MESOMORPH</option>
+              </select>
+              <select name="fl_gender" id="fl_gender">
+                <option value="">Select Gender</option>
+                <option value="Male" class="opt">MALE</option>
+                <option value="Female" class="opt">FEMALE</option>
+              </select>
+              <div id="fl_btn" onclick="fl_generate()">Generate</div>
+            </form>
+          </div>
+
+          <div class="wrapper4">
+            <h3 id="wgheading">Weight Gain</h3>
+            <form id="wg_form">
+              <input type="text" name="wg_height" id="wg_height" placeholder="Enter Your Height (in cm)">
+              <input type="text" name="wg_weight" id="wg_weight" placeholder="Enter Your Weight (in kg)">
+              <input type="text" name="wg_age" id="wg_age" placeholder="Enter Your Age">
+              <input type="text" name="wg_waist" id="wg_waist" placeholder="Enter Your Waist Size (in cm)">
+              <select name="wg_bodytype" id="wg_bodytype">
+                <option value="">Select Your Bodytype</option>
+                <option value="Ectomorph" id="ectomorph">ECTOMORPH</option>
+                <option value="Endomorph" id="endomorph">ENDOMORPH</option>
+                <option value="Mesomorph" id="mesomorph">MESOMORPH</option>
+              </select>
+              <select name="wg_gender" id="wg_gender">
+                <option value="">Select Gender</option>
+                <option value="Male" class="opt">MALE</option>
+                <option value="Female" class="opt">FEMALE</option>
+              </select>
+              <div id="wg_btn" onclick="wg_generate()">Generate</div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="mb_result">
+        <div class="leftside">
+          <h3 id="res_heading"></h3>
+          <p id="name"></p>
+          <p id="res_age"></p>
+          <p id="res_height"></p>
+          <p id="res_weight"></p>
+          <p id="res_gender"></p>
+          <p id="res_duration"></p>
+          <p id="res_bodytype"></p>
+        </div>
+        <div class="rightside">
+          <h3 id="uinfo">GENERATED RESULTS</h3>
+          <div class="mb_wrapper">
+            <div class="mb_box1">
+              <div class="mb_box1_sub1">
+                <div class="mb_box1_sub1_inner1">
+                  <h3 class="mb_res_ans" id="mb_mc"></h3>
+                  <p class="mb_labeling">MAINTAINANCE CALORIES</p>
+                </div>
+                <div class="mb_box1_sub1_inner2">
+                  <h3 class="mb_res_ans" id="mb_rc"></h3>
+                  <p class="mb_labeling">REQUIRED CALORIES</p>
+                </div>
+              </div>
+              <div class="mb_box1_sub2">
+                <div class="mb_box1_sub2_inner1">
+                  <h3 class="mb_res_ans" id="mb_sw">HIGH INTENSITY HYPERTROPY</h3>
+                  <p class="mb_labeling">SUGGESTED WORKOUT</p>
+                </div>
+              </div>
+              <div class="mb_box1_sub3">
+                <div class="mb_box1_sub3_inner1">
+                  <h3 class="mb_res_ans" id="mb_bmi"></h3>
+                  <p class="mb_labeling">BMI</p>
+                </div>
+                <div class="mb_box1_sub3_inner2">
+                  <h3 class="mb_res_ans" id="mb_category"></h3>
+                  <p class="mb_labeling">CATEGORY</p>
+                </div>
+                <div class="mb_box1_sub3_inner3">
+                  <h3 class="mb_res_ans" id="mb_bmr"></h3>
+                  <p class="mb_labeling">BMR</p>
+                </div>
+              </div>
+            </div>
+            <div class="mb_box2">
+              <div class="mb_box2_sub1">
+                <h3 class="mb_res_ans" id="mb_al">INTERMEDIATE</h3>
+                <p class="mb_labeling">ACTIVITY LEVEL</p>
+              </div>
+              <div class="mb_box2_sub2">
+                <h3 class="mb_res_ans" id="mb_ts">8 - 10 HOURS</h3>
+                <p class="mb_labeling">SLEEP DURATION</p>
+              </div>
+              <div class="mb_box2_sub3">
+                <h3 class="mb_res_ans">HIGH PROTEIN DIET</h3>
+                <p class="mb_labeling">DIET</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="sa_result">
+        <div class="leftside">
+          <h3 id="res_sa_heading"></h3>
+          <p id="sa_name"></p>
+          <p id="res_sa_age"></p>
+          <p id="res_sa_height"></p>
+          <p id="res_sa_weight"></p>
+          <p id="res_sa_gender"></p>
+          <p id="res_sa_bodytype"></p>
+          <p id="res_sa_sport"></p>
+        </div>
+        <div class="rightside">
+          <h3 id="uinfo">GENERATED RESULTS</h3>
+          <div class="sa_wrapper">
+            <div class="sa_box1">
+              <div class="sa_box1_sub1">
+                <div class="sa_box1_sub1_inner1">
+                  <h3 class="sa_res_ans" id="sa_mc"></h3>
+                  <p class="sa_labeling">MAINTAINANCE CALORIES</p>
+                </div>
+                <div class="sa_box1_sub1_inner2">
+                  <h3 class="sa_res_ans" id="sa_rc"></h3>
+                  <p class="sa_labeling">REQUIRED CALORIES</p>
+                </div>
+              </div>
+              <div class="sa_box1_sub2">
+                <div class="sa_box1_sub2_inner1">
+                  <h3 class="sa_res_ans" id="sa_sw">HIGH INTENSITY INTERVAL TRAINING</h3>
+                  <p class="sa_labeling">SUGGESTED WORKOUT</p>
+                </div>
+              </div>
+              <div class="sa_box1_sub3">
+                <div class="sa_box1_sub3_inner1">
+                  <h3 class="sa_res_ans" id="sa_bmi"></h3>
+                  <p class="sa_labeling">BMI</p>
+                </div>
+                <div class="sa_box1_sub3_inner2">
+                  <h3 class="sa_res_ans" id="sa_category"></h3>
+                  <p class="sa_labeling">CATEGORY</p>
+                </div>
+                <div class="sa_box1_sub3_inner3">
+                  <h3 class="sa_res_ans" id="sa_bmr"></h3>
+                  <p class="sa_labeling">BMR</p>
+                </div>
+              </div>
+            </div>
+            <div class="sa_box2">
+              <div class="sa_box2_sub1">
+                <h3 class="sa_res_ans" id="sa_al">EXTRA ACTIVE</h3>
+                <p class="sa_labeling">ACTIVITY LEVEL</p>
+              </div>
+              <div class="sa_box2_sub2">
+                <h3 class="sa_res_ans" id="sa_ss1"></h3>
+                <p class="sa_labeling">SUITABLE SPORT</p>
+              </div>
+              <div class="sa_box2_sub3">
+                <h3 class="sa_res_ans" id="hl">60%</h3>
+                <p class="sa_labeling" id="hormone">TESTOSTERONE LEVEL</p>
+              </div>
+              <div class="sa_box2_sub4">
+                <h3 class="sa_res_ans">ATKIN'S DIET</h3>
+                <p class="sa_labeling">DIET</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="fl_result">
+        <div class="leftside">
+          <h3 id="res_fl_heading"></h3>
+          <p id="fl_name"></p>
+          <p id="res_fl_age"></p>
+          <p id="res_fl_height"></p>
+          <p id="res_fl_weight"></p>
+          <p id="res_fl_gender"></p>
+          <p id="res_fl_bodytype"></p>
+          <p id="res_fl_waist"></p>
+        </div>
+        <div class="rightside">
+          <h3 id="uinfo">GENERATED RESULTS</h3>
+          <div class="fl_wrapper">
+            <div class="fl_box1">
+              <div class="fl_box1_sub1">
+                <div class="fl_box1_sub1_inner1">
+                  <h3 class="fl_res_ans" id="fl_mc"></h3>
+                  <p class="fl_labeling">MAINTAINANCE CALORIES</p>
+                </div>
+                <div class="fl_box1_sub1_inner2">
+                  <h3 class="fl_res_ans" id="fl_rc"></h3>
+                  <p class="fl_labeling">REQUIRED CALORIES</p>
+                </div>
+              </div>
+              <div class="fl_box1_sub2">
+                <div class="fl_box1_sub2_inner1">
+                  <h3 class="fl_res_ans" id="fl_sw">CARDIOVASCULAR TRAINING</h3>
+                  <p class="fl_labeling">SUGGESTED WORKOUT</p>
+                </div>
+              </div>
+              <div class="fl_box1_sub3">
+                <div class="fl_box1_sub3_inner1">
+                  <h3 class="fl_res_ans" id="fl_bmi"></h3>
+                  <p class="fl_labeling">BMI</p>
+                </div>
+                <div class="fl_box1_sub3_inner2">
+                  <h3 class="fl_res_ans" id="fl_category"></h3>
+                  <p class="fl_labeling">CATEGORY</p>
+                </div>
+                <div class="fl_box1_sub3_inner3">
+                  <h3 class="fl_res_ans" id="fl_bmr"></h3>
+                  <p class="fl_labeling">BMR</p>
+                </div>
+              </div>
+            </div>
+            <div class="fl_box2">
+              <div class="fl_box2_sub1">
+                <h3 class="fl_res_ans" id="fl_al">LESS ACTIVE</h3>
+                <p class="fl_labeling">ACTIVITY LEVEL</p>
+              </div>
+              <div class="fl_box2_sub2">
+                <h3 class="fl_res_ans" id="fl_iw"></h3>
+                <p class="fl_labeling">IDEAL WEIGHT</p>
+              </div>
+              <div class="fl_box2_sub3">
+                <h3 class="fl_res_ans" id="rfm"></h3>
+                <p class="fl_labeling" id="fl_rfm">RFM</p>
+              </div>
+              <div class="fl_box2_sub4">
+                <h3 class="fl_res_ans">INTERMITTENT FASTING</h3>
+                <p class="fl_labeling">DIET</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="wg_result">
+        <div class="leftside">
+          <h3 id="res_wg_heading"></h3>
+          <p id="wg_name"></p>
+          <p id="res_wg_age"></p>
+          <p id="res_wg_height"></p>
+          <p id="res_wg_weight"></p>
+          <p id="res_wg_gender"></p>
+          <p id="res_wg_bodytype"></p>
+          <p id="res_wg_waist"></p>
+        </div>
+        <div class="rightside">
+          <h3 id="uinfo">GENERATED RESULTS</h3>
+          <div class="wg_wrapper">
+            <div class="wg_box1">
+              <div class="wg_box1_sub1">
+                <div class="wg_box1_sub1_inner1">
+                  <h3 class="wg_res_ans" id="wg_mc"></h3>
+                  <p class="wg_labeling">MAINTAINANCE CALORIES</p>
+                </div>
+                <div class="wg_box1_sub1_inner2">
+                  <h3 class="wg_res_ans" id="wg_rc"></h3>
+                  <p class="wg_labeling">REQUIRED CALORIES</p>
+                </div>
+              </div>
+              <div class="wg_box1_sub2">
+                <div class="wg_box1_sub2_inner1">
+                  <h3 class="wg_res_ans" id="wg_sw">COMPOUND MOVEMENTS</h3>
+                  <p class="wg_labeling">SUGGESTED WORKOUT</p>
+                </div>
+              </div>
+              <div class="wg_box1_sub3">
+                <div class="wg_box1_sub3_inner1">
+                  <h3 class="wg_res_ans" id="wg_bmi"></h3>
+                  <p class="wg_labeling">BMI</p>
+                </div>
+                <div class="wg_box1_sub3_inner2">
+                  <h3 class="wg_res_ans" id="wg_category"></h3>
+                  <p class="wg_labeling">CATEGORY</p>
+                </div>
+                <div class="wg_box1_sub3_inner3">
+                  <h3 class="wg_res_ans" id="wg_bmr"></h3>
+                  <p class="wg_labeling">BMR</p>
+                </div>
+              </div>
+            </div>
+            <div class="wg_box2">
+              <div class="wg_box2_sub1">
+                <h3 class="wg_res_ans" id="wg_al">VERY ACTIVE</h3>
+                <p class="wg_labeling">ACTIVITY LEVEL</p>
+              </div>
+              <div class="wg_box2_sub2">
+                <h3 class="wg_res_ans" id="wg_iw"></h3>
+                <p class="wg_labeling">IDEAL WEIGHT</p>
+              </div>
+              <div class="wg_box2_sub3">
+                <h3 class="wg_res_ans" id="rfmm"></h3>
+                <p class="wg_labeling" id="wg_rfm">RFM</p>
+              </div>
+              <div class="wg_box2_sub4">
+                <h3 class="wg_res_ans">HIGH CARB DIET</h3>
+                <p class="wg_labeling">DIET</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <footer>
+      <h3>&#169; All Rights Reserved 2023 | www.ApexBodyCraft.com</h3>
+    </footer>
+  </body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="main.js"></script>
+</html>
